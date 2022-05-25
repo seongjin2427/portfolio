@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { fadeIn, fadeOut } from '../styles/animation';
 import theme from '../styles/theme';
@@ -31,9 +32,11 @@ function Home() {
         <Name convert={convert} onMouseEnter={onMouseOver}>
           {name}
         </Name>
-        <Name convert={!convert} onMouseLeave={onMouseLeave}>
-          {name}
-        </Name>
+        <Link to="/intro">
+          <Name convert={!convert} onMouseLeave={onMouseLeave}>
+            {name}
+          </Name>
+        </Link>
       </Title>
     </Wrapper>
   );
@@ -51,6 +54,11 @@ const Title = styled.div`
   font-weight: 900;
   font-size: 70px;
   color: #f8cb2e;
+
+  a {
+    text-decoration: none;
+    color: #f8cb2e;
+  }
 
   @media screen and (max-width: 375px) {
     font-size: 30px;
@@ -90,14 +98,14 @@ const Name = styled.span<Props>`
   &:after {
     display: block;
     content: '';
-    border-bottom: 3px solid #f8cb2e;
-    transform: scaleX(0);
-    transition: transform 0.5s ease-in-out;
+    border-bottom: 10px solid #f8cb2e;
+    transform: scaleX(0) translateY(-10px);
+    transition: transform 0.4s ease-in-out;
     transform-origin: 0% 50%;
   }
 
   &:hover:after {
-    transform: scaleX(1);
+    transform: scaleX(1) translateY(-10px);
   }
 `;
 

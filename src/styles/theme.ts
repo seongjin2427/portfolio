@@ -33,8 +33,8 @@ const common = {
     `,
 };
 
-export type fontSizes = typeof fontSizes;
-export type colors = typeof colors;
-export type common = typeof common;
+// export type fontSizes = typeof fontSizes;
+// export type colors = typeof colors;
+// export type common = typeof common;
 
 export default { colors, fontSizes, common };
