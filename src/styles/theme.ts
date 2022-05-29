@@ -12,10 +12,10 @@ const fontSizes = {
 
 // 자주 사용하는 색을 객체로 만들자.
 const colors = {
-  blue: '#006E7F',
-  yellow: '#F8CB2E',
-  orange: '#EE5007',
-  red: '#B22727',
+  deepblue: '#2155CD',
+  blue: '#0AA1DD',
+  lightblue: '#79DAE8',
+  whiteblue: '#E8F9FD',
 };
 
 // 자주 사용하는 스타일 속성을 theme으로 만들어보자.

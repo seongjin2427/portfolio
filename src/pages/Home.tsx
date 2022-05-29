@@ -32,7 +32,7 @@ function Home() {
         <Name convert={convert} onMouseEnter={onMouseOver}>
           {name}
         </Name>
-        <Link to="/intro">
+        <Link to="/main/intro">
           <Name convert={!convert} onMouseLeave={onMouseLeave}>
             {name}
           </Name>
@@ -53,11 +53,11 @@ const Title = styled.div`
   font-family: 'Recursive';
   font-weight: 900;
   font-size: 70px;
-  color: #f8cb2e;
+  color: ${theme.colors.deepblue};
 
   a {
     text-decoration: none;
-    color: #f8cb2e;
+    color: ${theme.colors.deepblue};
   }
 
   @media screen and (max-width: 375px) {
@@ -84,6 +84,7 @@ const Name = styled.span<Props>`
   animation-timing-function: ease-out;
   animation-name: ${fadeIn};
   animation-fill-mode: forwards;
+
   ${(props) =>
     props.convert &&
     css`
@@ -98,7 +99,7 @@ const Name = styled.span<Props>`
   &:after {
     display: block;
     content: '';
-    border-bottom: 10px solid #f8cb2e;
+    border-bottom: 10px solid ${theme.colors.deepblue};
     transform: scaleX(0) translateY(-10px);
     transition: transform 0.4s ease-in-out;
     transform-origin: 0% 50%;

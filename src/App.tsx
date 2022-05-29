@@ -1,23 +1,24 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
 import './App.css';
-import Introduction from './components/Introduction';
-import Layout from './layout/Layout';
+import Introduction from './pages/Introduction';
+import Contact from './pages/Contact';
 import Home from './pages/Home';
-import theme from './styles/theme';
+import Main from './pages/Main';
+import Projects from './pages/Projects';
+import Stack from './pages/Stack';
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/main" element={<Main />}>
+          <Route path="intro" element={<Introduction />} />
+          <Route path="stack" element={<Stack />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
       </Routes>
-      <Layout>
-        <Routes>
-          <Route path="/intro" element={<Introduction />} />
-        </Routes>
-      </Layout>
     </>
   );
 }

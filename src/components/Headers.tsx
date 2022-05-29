@@ -1,18 +1,39 @@
-import React from 'react';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import theme from '../styles/theme';
+
+const menuList = [
+  {
+    name: 'intro',
+    text: 'Introduction',
+  },
+  {
+    name: 'stack',
+    text: 'Stack',
+  },
+  {
+    name: 'projects',
+    text: 'Projects',
+  },
+  {
+    name: 'contact',
+    text: 'Contact',
+  },
+];
 
 function Headers() {
   return (
     <Wrapper>
       <Logo>
-        <span>ITO</span>
+        <Link to="/main/intro">ITO</Link>
       </Logo>
       <Menus>
-        <Menu>Introduction</Menu>
-        <Menu>Stack</Menu>
-        <Menu>Project</Menu>
-        <Menu>Contect</Menu>
+        {menuList.map((m) => (
+          <Menu key={m.name}>
+            <MenuLink to={'/main/' + m.name}>{m.text}</MenuLink>
+          </Menu>
+        ))}
       </Menus>
     </Wrapper>
   );
@@ -24,11 +45,16 @@ const Wrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 4.5rem;
-  color: ${theme.colors.yellow};
+  height: 5rem;
+  color: ${theme.colors.whiteblue};
   font-size: 1.2rem;
   font-weight: 700;
-  background: ${theme.colors.red};
+  background: ${theme.colors.deepblue};
+
+  a {
+    text-decoration: none;
+    color: ${theme.colors.whiteblue};
+  }
 `;
 
 const Logo = styled.div`
@@ -40,7 +66,7 @@ const Logo = styled.div`
   position: absolute;
   left: 1.5rem;
   font-weight: 900;
-  cursor: pointer;  
+  cursor: pointer;
 `;
 
 const Menus = styled.ul`
@@ -51,18 +77,24 @@ const Menus = styled.ul`
 `;
 
 const Menu = styled.li`
-  margin-right: 30px;
+  margin-right: 40px;
+`;
 
+const MenuLink = styled(NavLink)`
   &::after {
     display: block;
     content: '';
-    border-bottom: 3.5px solid ${theme.colors.yellow};
+    border-bottom: 3.5px solid ${theme.colors.whiteblue};
     transform: scaleX(0);
     transition: transform ease-in-out 0.2s;
     transform-origin: 0% 50%;
   }
   &:hover:after {
     transform: scaleX(1);
+  }
+
+  &.active {
+    border-bottom: 3.5px solid ${theme.colors.whiteblue};
   }
 `;
 
