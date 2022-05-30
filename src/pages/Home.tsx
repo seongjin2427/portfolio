@@ -26,18 +26,20 @@ function Home() {
 
   return (
     <Wrapper>
-      <Title>
-        This is Portfolio of
-        <br />
-        <Name convert={convert} onMouseEnter={onMouseOver}>
-          {name}
-        </Name>
-        <Link to="/main/intro">
-          <Name convert={!convert} onMouseLeave={onMouseLeave}>
+      <MainGlassCard>
+        <Title>
+          This is Portfolio of
+          <br />
+          <Name convert={convert} onMouseEnter={onMouseOver}>
             {name}
           </Name>
-        </Link>
-      </Title>
+          <Link to="/main/intro">
+            <Name convert={!convert} onMouseLeave={onMouseLeave}>
+              {name}
+            </Name>
+          </Link>
+        </Title>
+      </MainGlassCard>
     </Wrapper>
   );
 }
@@ -46,6 +48,18 @@ const Wrapper = styled.div`
   ${theme.common.flexCenter}
   width: 100%;
   min-height: 100vh;
+`;
+
+const MainGlassCard = styled.div`
+  ${theme.common.flexCenter}
+  width: 800px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(11px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 `;
 
 const Title = styled.div`
@@ -60,10 +74,6 @@ const Title = styled.div`
     color: ${theme.colors.deepblue};
   }
 
-  @media screen and (max-width: 375px) {
-    font-size: 30px;
-  }
-
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-name: ${fadeIn};
@@ -75,10 +85,6 @@ const Name = styled.span<Props>`
   display: inline-block;
   text-transform: uppercase;
   transition: all 1s;
-
-  @media screen and (max-width: 375px) {
-    width: 300px;
-  }
 
   animation-duration: 1s;
   animation-timing-function: ease-out;

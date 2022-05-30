@@ -23,11 +23,23 @@ export const turnover = keyframes`
   100%{transform:rotateY(90deg);}
 `;
 
-export const turnover2 = keyframes`
-  0%{transform:rotateY(-90deg);}
-  100%{transform:rotateY(0deg);}
-`;
 export const reTurnover = keyframes`
   0%{transform:rotateY(-90deg);}
   100%{transform:rotateY(0deg);}
+`;
+
+export const floating = keyframes`
+
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+
 `;

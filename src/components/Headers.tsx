@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import theme from '../styles/theme';
 
 const menuList = [
@@ -40,8 +39,10 @@ function Headers() {
 }
 
 const Wrapper = styled.div`
+  left: 0;
+  top: 0;
   display: flex;
-  position: relative;
+  position: fixed;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
@@ -50,6 +51,7 @@ const Wrapper = styled.div`
   font-size: 1.2rem;
   font-weight: 700;
   background: ${theme.colors.deepblue};
+  z-index: 2;
 
   a {
     text-decoration: none;

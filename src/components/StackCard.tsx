@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled, { css } from 'styled-components';
 import theme from '../styles/theme';
 import { turnover, reTurnover } from '../styles/animation';
+import { SerializedError } from '@reduxjs/toolkit';
 
 type Props = {
   data: {
@@ -9,13 +10,15 @@ type Props = {
     name: string;
     text?: string;
   };
+  size: number;
 };
 
 type CardProps = {
   fliped: boolean;
+  size: number;
 };
 
-function StackCard({ data }: Props) {
+function StackCard({ data, size }: Props) {
   const { src, name, text } = data;
   const [fliped, setFlipped] = useState(false);
 
@@ -24,7 +27,7 @@ function StackCard({ data }: Props) {
   };
 
   return (
-    <Card onClick={onClick} fliped={fliped}>
+    <Card onClick={onClick} fliped={fliped} size={size}>
       <img className="front" src={src} alt="sample" />
       <p className="back">
         <span>
@@ -39,8 +42,13 @@ function StackCard({ data }: Props) {
 
 const Card = styled.div<CardProps>`
   ${theme.common.flexCenter}
-  width: 15rem;
-  height: 15rem;
+
+  // 카드 가로세로 크기
+  ${({ size }) => css`
+    width: ${size}rem;
+    height: ${size}rem;
+  `}
+
   position: relative;
   padding: 25px;
   margin: 20px;
@@ -62,9 +70,14 @@ const Card = styled.div<CardProps>`
     left: 0;
     transform: translate(-50%, -50%);
     padding: 25px;
-    border: 2px solid ${theme.colors.blue};
-    background: ${theme.colors.whiteblue};
+
     border-radius: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(11px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   img {
@@ -89,6 +102,8 @@ const Card = styled.div<CardProps>`
     overflow: scroll;
     transform: rotateY(-90deg);
     word-break: keep-all;
+    background: ${theme.colors.deepblue};
+    color: ${theme.colors.whiteblue};
     ${(props): any =>
       props.fliped
         ? css`
@@ -99,7 +114,7 @@ const Card = styled.div<CardProps>`
         : css`
             animation: ${turnover} 0.5s 1 forwards;
             transform: translateY(-10px);
-          `}
+          `};
   }
 `;
 

@@ -1,4 +1,4 @@
-export const frontList = [
+const frontList = [
   {
     name: 'HTML',
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png',
@@ -22,7 +22,7 @@ export const frontList = [
   {
     name: 'Vue',
     src: 'https://kr.vuejs.org/images/logo.png',
-    text: '첫 프로젝트를 Vue2로 만들었던 경험이 있습니다.',
+    text: 'Vue2를 이용하여 컴포넌트 단위의 개발을 통한 프로젝트 구현 경험이 있습니다.',
   },
   {
     name: 'React',
@@ -31,7 +31,7 @@ export const frontList = [
   },
 ];
 
-export const backList = [
+const backList = [
   {
     name: 'Java',
     src: 'https://cdn-icons-png.flaticon.com/512/226/226777.png',
@@ -59,7 +59,7 @@ export const backList = [
   },
 ];
 
-export const etcList = [
+const etcList = [
   {
     name: 'Git',
     src: 'https://hiseon.me/wp-content/uploads/2018/07/git-logo.png',
@@ -74,5 +74,20 @@ export const etcList = [
     name: 'IntelliJ',
     src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/800px-IntelliJ_IDEA_Icon.svg.png',
     text: 'IntelliJ를 활용하여 프로젝트를 구현한 경험이 있습니다.',
+  },
+];
+
+export const stackList = [
+  {
+    text: 'Front',
+    list: frontList,
+  },
+  {
+    text: 'Back',
+    list: backList,
+  },
+  {
+    text: 'Etc.',
+    list: etcList,
   },
 ];
