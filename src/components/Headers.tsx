@@ -55,6 +55,9 @@ const Wrapper = styled.div`
     text-decoration: none;
     color: ${theme.colors.whiteblue};
   }
+  @media (max-width: 768px) {
+    height: 3.25rem;
+  }
 `;
 
 const Logo = styled.div`
@@ -73,6 +76,13 @@ const Logo = styled.div`
     width: 5rem;
     filter: brightness(1000%);
   }
+  @media (max-width: 768px) {
+    left: -1rem;
+    top: 0.175rem;
+    img {
+      width: 2.5rem;
+    }
+  }
 `;
 
 const Menus = styled.ul`
@@ -83,12 +93,15 @@ const Menus = styled.ul`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    font-size: 1.25rem;
+    font-size: 0.75rem;
   }
 `;
 
 const Menu = styled.li`
   margin-right: 40px;
+  @media (max-width: 768px) {
+    margin-right: 1rem;
+  }
 `;
 
 const MenuLink = styled(NavLink)`

@@ -41,7 +41,8 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 31.25rem;
+    width: 15rem;
+    margin-bottom: 5rem;
   }
 `;
 
@@ -61,7 +62,8 @@ const Title = styled.div`
   color: ${theme.colors.deepblue};
 
   @media (max-width: 768px) {
-    width: 30rem;
+    width: 100%;
+    font-size: 2.5rem;
   }
 `;
 

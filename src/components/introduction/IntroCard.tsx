@@ -5,7 +5,9 @@ import theme from '../../styles/theme';
 function IntroCard() {
   return (
     <GlassContainer>
-      <img src={require('../../assets/selfie.jpg')} alt="" />
+      <ImageDiv>
+        <img src={require('../../assets/selfie.jpg')} alt="" />
+      </ImageDiv>
       <div className="seperate">
         <UpperContainer>
           <IntroUl>
@@ -84,9 +86,6 @@ const GlassContainer = styled.div`
 
   animation: ${floating2} 10s infinite;
 
-  img {
-    width: 25rem;
-  }
   .seperate {
     width: 100%;
     height: 100%;
@@ -95,19 +94,35 @@ const GlassContainer = styled.div`
 
   @media (max-width: 768px) {
     width: 90%;
-    height: 45rem;
-    margin-top: 4rem;
-    margin-bottom: 10rem;
+    height: 35rem;
+    margin-top: 2.5rem;
+    margin-bottom: 7.5rem;
     flex-direction: column;
     padding: 2rem;
 
-    font-size: 1rem;
+    font-size: 0.75rem;
 
-    img {
-      width: 100%;
-    }
     .seperate {
+      height: 40%;
       padding: 0.5rem;
+    }
+  }
+`;
+
+const ImageDiv = styled.div`
+  ${theme.common.flexCenter};
+  width: 47.5rem;
+  height: 100%;
+
+  img {
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    width: 15rem;
+    height: 60%;
+    img {
+      width: auto;
+      height: 100%;
     }
   }
 `;
@@ -118,7 +133,7 @@ const UpperContainer = styled.div`
   padding-bottom: 0.25rem;
 
   @media (max-width: 768px) {
-    height: 35%;
+    height: 50%;
   }
 `;
 
@@ -160,12 +175,13 @@ const IntroLi = styled.li`
   }
 
   @media (max-width: 768px) {
+    padding-top: 7.5px;
     img {
-      width: 1.5rem;
+      width: 1.25rem;
       margin-right: 0.5rem;
     }
     .name {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
     .email,
     .github {
@@ -183,6 +199,9 @@ const LowerContainer = styled.div`
     color: ${theme.colors.darkblue};
     text-decoration: underline;
   }
+  @media (max-width: 768px) {
+    height: 50%;
+  }
 `;
 
 const Dot = styled.span`
@@ -195,8 +214,9 @@ const Dot = styled.span`
   margin-right: 8px;
 
   @media (max-width: 768px) {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.25rem;
   }
 `;
 export default IntroCard;

@@ -121,7 +121,6 @@ const Card = styled.div<CardProps>`
 
   @media (max-width: 768px) {
     ${theme.common.flexCenter}
-    background: rgba(255, 255, 255, 0.25);
 
     // 카드 가로세로 크기
     ${({ size, duration }) => css`
@@ -137,9 +136,10 @@ const Card = styled.div<CardProps>`
 
     img,
     p {
-      font-size: 1.15rem;
-      width: 10rem;
-      height: 10rem;
+      font-size: 1rem;
+      width: 9rem;
+      height: 9rem;
+      padding: 2rem;
     }
 
     &:hover {

@@ -108,10 +108,10 @@ const GlassContainer = styled.div<ContainerProps>`
     `}
 
   @media (max-width: 768px) {
-    width: 35rem;
-    height: 45rem;
-    padding: 3.5rem;
-    margin-top: 5rem;
+    width: 15rem;
+    height: 37.5rem;
+    padding: 2rem;
+    margin-top: 2.5rem;
     flex-direction: column;
   }
 `;
@@ -129,7 +129,7 @@ const LeftDiv = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 50%;
+    height: 35%;
     flex-direction: column-reverse;
   }
 `;
@@ -141,6 +141,7 @@ const Panels = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
+    height: 15%;
     align-items: center;
   }
 `;
@@ -180,8 +181,9 @@ const PanelImg = styled.img<PanelImgProps>`
   }
 
   @media (max-width: 768px) {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: 0.25rem 2rem;
   }
 `;
 
@@ -198,8 +200,8 @@ const RightDiv = styled.div`
   @media (max-width: 768px) {
     display: flex;
     width: 100%;
-    height: 50%;
-    padding: 1rem;
+    height: 65%;
+    padding: 0.5rem;
     flex-direction: column;
   }
 `;
@@ -218,8 +220,12 @@ const ProjectName = styled.p`
   }
 
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     padding-top: 0.5rem;
+
+    img {
+      width: 1rem;
+    }
   }
 `;
 
@@ -228,7 +234,7 @@ const SpendTime = styled.p`
   padding: 0 0.5rem;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.175rem;
   }
 `;
 
@@ -240,7 +246,7 @@ const Title = styled.p`
   word-break: keep-all;
 
   @media (max-width: 768px) {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
   }
 `;
 
@@ -254,7 +260,7 @@ const DescLi = styled.li`
   padding: 0.25rem 0.5rem;
 
   @media (max-width: 768px) {
-    font-size: 1.35rem;
+    font-size: 1rem;
   }
 `;
 export default ProjectCards;
