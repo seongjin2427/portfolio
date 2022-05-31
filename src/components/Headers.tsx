@@ -21,7 +21,9 @@ function Headers() {
   return (
     <Wrapper>
       <Logo>
-        <Link to="/main/intro">ITO</Link>
+        <Link to="/main/intro">
+          <img src={require('../assets/logo.png')} alt="logo" />
+        </Link>
       </Logo>
       <Menus>
         {menuList.map((m) => (
@@ -62,9 +64,15 @@ const Logo = styled.div`
   width: 100px;
   font-size: 2.5rem;
   position: absolute;
-  left: 1.5rem;
+  top: 0;
+  left: 1rem;
   font-weight: 900;
   cursor: pointer;
+
+  img {
+    width: 5rem;
+    filter: brightness(1000%);
+  }
 `;
 
 const Menus = styled.ul`

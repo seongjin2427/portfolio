@@ -1,3 +1,39 @@
+type stackIconListType = {
+  [key: string]: {
+    src: string;
+  };
+};
+
+export const stackIconList: stackIconListType = {
+  HTML: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png',
+  },
+  CSS: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png',
+  },
+  JavaScript: {
+    src: 'https://t1.daumcdn.net/cfile/tistory/2149683A58CA6BF313',
+  },
+  jQuery: {
+    src: 'https://avatars.githubusercontent.com/u/70142?s=280&v=4',
+  },
+  Vue: {
+    src: 'https://kr.vuejs.org/images/logo.png',
+  },
+  React: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
+  },
+  Java: {
+    src: 'https://cdn-icons-png.flaticon.com/512/226/226777.png',
+  },
+  'Spring Boot': {
+    src: 'https://perfectacle.github.io/2017/08/02/Spring-boot-study-001day/thumb.png',
+  },
+  TypeScript: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png',
+  },
+};
+
 const frontList = [
   {
     name: 'HTML',

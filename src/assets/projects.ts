@@ -1,8 +1,20 @@
+import { stackIconList } from './stack';
+
 export type DataProps = {
   id: number;
   title: string;
   desc: string[];
 }[];
+
+export type StackProps = {
+  src: string;
+};
+
+const portfolioStack = ['React', 'TypeScript'];
+export const portfolioIconSet = portfolioStack.map((stack: any) => stackIconList[stack].src);
+
+const snutStack = ['Vue', 'Java', 'Spring Boot'];
+export const snutIconSet = snutStack.map((stack: any) => stackIconList[stack].src);
 
 export const portfolio: DataProps = [
   {

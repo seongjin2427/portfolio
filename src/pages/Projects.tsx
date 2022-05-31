@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 import ProjectCards from '../components/project/ProjectCards';
 
-import { portfolio, snut } from '../assets/projects';
+import { portfolio, snut, portfolioIconSet, snutIconSet } from '../assets/projects';
 
 function Projects() {
   return (
     <Wrapper>
-      <ProjectCards duration={5} data={portfolio} projectName="Portfolio" spendTime="2022/05" />
-      <ProjectCards duration={7} data={snut} projectName="Snut" spendTime="2022/03 ~ 2022/04" />
+      <ProjectCards
+        duration={5}
+        data={portfolio}
+        projectName="Portfolio"
+        spendTime="2022/05"
+        iconSet={portfolioIconSet}
+      />
+      <ProjectCards duration={7} data={snut} projectName="Snut" spendTime="2022/03 ~ 2022/04" iconSet={snutIconSet} />
     </Wrapper>
   );
 }

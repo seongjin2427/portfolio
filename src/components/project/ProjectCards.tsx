@@ -11,6 +11,7 @@ type Props = {
   data: DataProps;
   projectName: string;
   spendTime: string;
+  iconSet: string[];
 };
 
 type ContainerProps = {
@@ -22,7 +23,7 @@ type PanelImgProps = {
   maxLength: number;
 };
 
-function ProjectCards({ duration, data, projectName, spendTime }: Props) {
+function ProjectCards({ duration, data, projectName, spendTime, iconSet }: Props) {
   const [num, setNum] = useState(0);
   const { id, title, desc } = data[num];
 
@@ -64,7 +65,12 @@ function ProjectCards({ duration, data, projectName, spendTime }: Props) {
         </Panels>
       </LeftDiv>
       <RightDiv>
-        <ProjectName>{projectName}</ProjectName>
+        <ProjectName>
+          {projectName}
+          {iconSet.map((src) => (
+            <img src={src} alt="icon" key={src} />
+          ))}
+        </ProjectName>
         <SpendTime>{spendTime}</SpendTime>
         <hr />
         <Title>{title}</Title>
@@ -104,22 +110,26 @@ const GlassContainer = styled.div<ContainerProps>`
 
 const LeftDiv = styled.div`
   width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
   video {
     width: 100%;
+    height: 85%;
   }
 `;
 
 const Panels = styled.div`
   width: 100%;
+  height: 15%;
   display: flex;
   justify-content: center;
 `;
 
 const PanelImg = styled.img<PanelImgProps>`
   width: 50px;
+  height: 50px;
   margin: 1rem 5rem;
   filter: invert(25%) sepia(73%) saturate(2608%) hue-rotate(215deg) brightness(85%) contrast(89%);
   cursor: pointer;
@@ -167,6 +177,15 @@ const RightDiv = styled.div`
 const ProjectName = styled.p`
   font-size: 3rem;
   padding: 0 0.5rem;
+
+  img {
+    width: 2rem;
+    margin-left: 0.5rem;
+
+    &:first-child {
+      margin-left: 1rem;
+    }
+  }
 `;
 
 const SpendTime = styled.p`
