@@ -106,6 +106,14 @@ const GlassContainer = styled.div<ContainerProps>`
     css`
       animation: ${floating2} ${props.duration}s infinite;
     `}
+
+  @media (max-width: 768px) {
+    width: 35rem;
+    height: 45rem;
+    padding: 3.5rem;
+    margin-top: 5rem;
+    flex-direction: column;
+  }
 `;
 
 const LeftDiv = styled.div`
@@ -118,6 +126,12 @@ const LeftDiv = styled.div`
     width: 100%;
     height: 85%;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 50%;
+    flex-direction: column-reverse;
+  }
 `;
 
 const Panels = styled.div`
@@ -125,6 +139,10 @@ const Panels = styled.div`
   height: 15%;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const PanelImg = styled.img<PanelImgProps>`
@@ -160,6 +178,11 @@ const PanelImg = styled.img<PanelImgProps>`
         filter: invert(25%) sepia(73%) saturate(2608%) hue-rotate(215deg) brightness(150%) contrast(100%);
       `}
   }
+
+  @media (max-width: 768px) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;
 
 const RightDiv = styled.div`
@@ -169,9 +192,16 @@ const RightDiv = styled.div`
   padding-right: 0;
 
   font-family: 'Black Han Sans';
-  font-size: 1.75rem;
   color: ${theme.colors.deepblue};
   text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    padding: 1rem;
+    flex-direction: column;
+  }
 `;
 
 const ProjectName = styled.p`
@@ -186,11 +216,20 @@ const ProjectName = styled.p`
       margin-left: 1rem;
     }
   }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    padding-top: 0.5rem;
+  }
 `;
 
 const SpendTime = styled.p`
   font-size: 2rem;
   padding: 0 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Title = styled.p`
@@ -199,6 +238,10 @@ const Title = styled.p`
   margin-bottom: 1rem;
   padding: 0 0.5rem;
   word-break: keep-all;
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const DescUl = styled.ul`
@@ -209,5 +252,9 @@ const DescLi = styled.li`
   font-size: 1.5rem;
   word-break: keep-all;
   padding: 0.25rem 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.35rem;
+  }
 `;
 export default ProjectCards;

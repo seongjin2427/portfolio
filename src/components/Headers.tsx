@@ -81,6 +81,10 @@ const Menus = styled.ul`
   font-size: 1.5rem;
   list-style: none;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const Menu = styled.li`

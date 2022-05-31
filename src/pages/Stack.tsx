@@ -4,6 +4,15 @@ import { stackList } from '../assets/stack';
 import theme from '../styles/theme';
 import { Fragment } from 'react';
 
+function makeRandomDuration(length: number): number[] {
+  let arr: number[] = new Array(length);
+  for (let i = 0; i < length; i++) {
+    const random = Math.random() * 5 + 2;
+    arr[i] = random;
+  }
+  return arr;
+}
+
 function Stack() {
   return (
     <Wrapper>
@@ -11,9 +20,10 @@ function Stack() {
         <Fragment key={stack.text}>
           <Title>{stack.text}</Title>
           <Container>
-            {stack.list.map((list) => (
-              <StackCard size={15} key={list.name} data={list} />
-            ))}
+            {stack.list.map((list, index) => {
+              const arr = makeRandomDuration(10);
+              return <StackCard size={15} duration={arr[index]} key={list.name} data={list} />;
+            })}
           </Container>
         </Fragment>
       ))}
@@ -26,6 +36,13 @@ const Wrapper = styled.div`
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 200px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 31.25rem;
+  }
 `;
 
 const Container = styled.div`
@@ -42,6 +59,10 @@ const Title = styled.div`
   font-family: 'Recursive';
   font-weight: 700;
   color: ${theme.colors.deepblue};
+
+  @media (max-width: 768px) {
+    width: 30rem;
+  }
 `;
 
 export default Stack;

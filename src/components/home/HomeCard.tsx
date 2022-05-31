@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { fadeIn, fadeOut } from '../../styles/animation';
+import { fadeIn, fadeOut, twinkle } from '../../styles/animation';
 import theme from '../../styles/theme';
 
 type Props = {
@@ -43,14 +43,19 @@ function HomeCard() {
 
 const MainGlassCard = styled.div`
   ${theme.common.flexCenter}
-  width: 800px;
-  height: 500px;
+  width: 50rem;
+  height: 30rem;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  border-radius: 20px;
+  border-radius: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
+
+  @media (max-width: 768px) {
+    width: 30rem;
+    height: 20rem;
+  }
 `;
 
 const Title = styled.div`
@@ -60,7 +65,10 @@ const Title = styled.div`
   font-size: 70px;
   text-shadow: 2px 2px 10px rgba(255, 255, 255, 1);
   color: ${theme.colors.deepblue};
-  /* color: rgba(255, 255, 255, 0.15); */
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 
   a {
     text-decoration: none;
@@ -79,9 +87,10 @@ const Name = styled.span<Props>`
   text-transform: uppercase;
   transition: all 1s;
 
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-name: ${fadeIn};
+  /* animation-duration: 1s, 3s;
+  animation-timing-function: ease-out, ease-in-out; */
+  animation: ${fadeIn} 1s ease-out, ${twinkle} 8s infinite;
+  /* animation-iteration-count: inherit, infinite; */
   animation-fill-mode: forwards;
 
   ${(props) =>

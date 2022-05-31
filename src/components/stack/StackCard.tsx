@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
 import theme from '../../styles/theme';
-import { turnover, reTurnover } from '../../styles/animation';
+import { turnover, reTurnover, floating2 } from '../../styles/animation';
 
 type Props = {
   data: {
@@ -10,14 +10,16 @@ type Props = {
     text?: string;
   };
   size: number;
+  duration: number;
 };
 
 type CardProps = {
   fliped: boolean;
   size: number;
+  duration: number;
 };
 
-function StackCard({ data, size }: Props) {
+function StackCard({ data, size, duration }: Props) {
   const { src, name, text } = data;
   const [fliped, setFlipped] = useState(false);
 
@@ -26,7 +28,7 @@ function StackCard({ data, size }: Props) {
   };
 
   return (
-    <Card onClick={onClick} fliped={fliped} size={size}>
+    <Card onClick={onClick} fliped={fliped} size={size} duration={duration}>
       <img className="front" src={src} alt="sample" />
       <p className="back">
         <span>
@@ -115,6 +117,34 @@ const Card = styled.div<CardProps>`
             animation: ${turnover} 0.5s 1 forwards;
             transform: translateY(-10px);
           `};
+  }
+
+  @media (max-width: 768px) {
+    ${theme.common.flexCenter}
+    background: rgba(255, 255, 255, 0.25);
+
+    // 카드 가로세로 크기
+    ${({ size, duration }) => css`
+      width: ${size / 1.5}rem;
+      height: ${size / 1.5}rem;
+
+      animation: ${floating2} ${duration}s infinite;
+    `}
+
+    span:first-child {
+      font-size: 1.5rem;
+    }
+
+    img,
+    p {
+      font-size: 1.15rem;
+      width: 10rem;
+      height: 10rem;
+    }
+
+    &:hover {
+      transform: none;
+    }
   }
 `;
 

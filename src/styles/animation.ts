@@ -54,3 +54,24 @@ export const floating2 = keyframes`
     transform: rotate(0.5deg);
   }
 `;
+
+export const twinkle = keyframes`
+  0% {
+    filter: brightness(100%);
+  }
+  92% {
+    filter: brightness(100%);
+  }
+  93% {
+    filter: brightness(200%);
+  }
+  94% {
+    filter: brightness(150%);
+  }
+  95% {
+    filter: brightness(200%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+`;

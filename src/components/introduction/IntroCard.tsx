@@ -17,7 +17,7 @@ function IntroCard() {
             </IntroLi>
             <IntroLi>
               <img src={require('../../assets/email.png')} alt="" />
-              <span>ghghgh3434@naver.com</span>
+              <span className="email">ghghgh3434@naver.com</span>
             </IntroLi>
             <IntroLi>
               <img src={require('../../assets/github.png')} alt="" />
@@ -90,18 +90,38 @@ const GlassContainer = styled.div`
   .seperate {
     width: 100%;
     height: 100%;
-    padding: 50px;
+    padding: 3.5rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 30rem;
+    height: 45rem;
+    flex-direction: column;
+    padding: 2.5rem;
+
+    font-size: 1.5rem;
+
+    img {
+      width: 14rem;
+    }
+    .seperate {
+      padding: 1rem;
+    }
   }
 `;
 
 const UpperContainer = styled.div`
   width: 100%;
   height: 50%;
-  padding-bottom: 5px;
+  padding-bottom: 0.25rem;
 `;
 
 const IntroUl = styled.ul`
   list-style: none;
+
+  @media (max-width: 768px) {
+    padding-bottom: 1rem;
+  }
 `;
 
 const IntroLi = styled.li`
@@ -132,10 +152,23 @@ const IntroLi = styled.li`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    img {
+      width: 2.25rem;
+    }
+    .name {
+      font-size: 3rem;
+    }
+    .email,
+    .github {
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 const LowerContainer = styled.div`
-  padding-top: 20px;
+  padding-top: 1rem;
   width: 100%;
   height: 50%;
 
@@ -153,5 +186,10 @@ const Dot = styled.span`
   background: ${theme.colors.deepblue};
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
   margin-right: 8px;
+
+  @media (max-width: 768px) {
+    width: 1rem;
+    height: 1rem;
+  }
 `;
 export default IntroCard;

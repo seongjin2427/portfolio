@@ -32,11 +32,15 @@ function Layout({ children }: any) {
 }
 
 const Body = styled.div`
-  padding: 80px 0;
   width: 100%;
   height: 100%;
+  padding: 80px 0;
   position: fixed;
   overflow: scroll;
+
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
 `;
 
 export default Layout;
