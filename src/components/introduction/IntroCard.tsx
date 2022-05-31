@@ -94,18 +94,20 @@ const GlassContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 30rem;
+    width: 90%;
     height: 45rem;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
     flex-direction: column;
-    padding: 2.5rem;
+    padding: 2rem;
 
-    font-size: 1.5rem;
+    font-size: 1rem;
 
     img {
-      width: 14rem;
+      width: 100%;
     }
     .seperate {
-      padding: 1rem;
+      padding: 0.5rem;
     }
   }
 `;
@@ -114,13 +116,17 @@ const UpperContainer = styled.div`
   width: 100%;
   height: 50%;
   padding-bottom: 0.25rem;
+
+  @media (max-width: 768px) {
+    height: 35%;
+  }
 `;
 
 const IntroUl = styled.ul`
   list-style: none;
 
   @media (max-width: 768px) {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 `;
 
@@ -155,14 +161,15 @@ const IntroLi = styled.li`
 
   @media (max-width: 768px) {
     img {
-      width: 2.25rem;
+      width: 1.5rem;
+      margin-right: 0.5rem;
     }
     .name {
-      font-size: 3rem;
+      font-size: 2rem;
     }
     .email,
     .github {
-      font-size: 1.4rem;
+      font-size: 0.75rem;
     }
   }
 `;
@@ -188,8 +195,8 @@ const Dot = styled.span`
   margin-right: 8px;
 
   @media (max-width: 768px) {
-    width: 1rem;
-    height: 1rem;
+    width: 0.75rem;
+    height: 0.75rem;
   }
 `;
 export default IntroCard;

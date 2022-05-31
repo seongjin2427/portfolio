@@ -53,8 +53,8 @@ const MainGlassCard = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.3);
 
   @media (max-width: 768px) {
-    width: 30rem;
-    height: 20rem;
+    width: 20rem;
+    height: 13.5rem;
   }
 `;
 
@@ -67,7 +67,7 @@ const Title = styled.div`
   color: ${theme.colors.deepblue};
 
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   a {
