@@ -41,5 +41,16 @@ export const floating = keyframes`
       opacity: 0;
       border-radius: 50%;
   }
+`;
 
+export const floating2 = keyframes`
+  0% {
+    transform: rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-0.5deg);
+  }
+  100% {
+    transform: rotate(0.5deg);
+  }
 `;

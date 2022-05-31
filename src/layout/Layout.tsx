@@ -1,21 +1,33 @@
-import { useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 
+import { useLocation } from 'react-router-dom';
+
 import Headers from '../components/Headers';
+import Home from '../pages/Home';
 
 function Layout({ children }: any) {
   const location = useLocation();
 
   return (
-    <div>
-      <Headers />
+    <>
+      {location.pathname === '/' ? null : <Headers />}
       <TransitionGroup>
-        <CSSTransition key={location.pathname} timeout={200} classNames="page">
-          <Body className="page-slider">{children}</Body>
+        <CSSTransition key={location.pathname} timeout={300} classNames="page">
+          {location.pathname === '/' ? (
+            <Home />
+          ) : (
+            <div>
+              <TransitionGroup>
+                <CSSTransition key={location.pathname} timeout={300} classNames="page">
+                  <Body className="page">{children}</Body>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
+          )}
         </CSSTransition>
       </TransitionGroup>
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import StackCard from '../components/StackCard';
+import styled from 'styled-components';
+import StackCard from '../components/stack/StackCard';
 import { stackList } from '../assets/stack';
 import theme from '../styles/theme';
 import { Fragment } from 'react';

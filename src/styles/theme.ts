@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 // 반응형 디자인을 위한 픽셀 컨버팅 함수
 const pixelToRem = (size: number) => `${size / 16}rem`;
 
@@ -12,6 +10,7 @@ const fontSizes = {
 
 // 자주 사용하는 색을 객체로 만들자.
 const colors = {
+  darkblue: '#163A8C',
   deepblue: '#2155CD',
   blue: '#0AA1DD',
   lightblue: '#79DAE8',
@@ -37,4 +36,5 @@ const common = {
 // export type colors = typeof colors;
 // export type common = typeof common;
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { colors, fontSizes, common };

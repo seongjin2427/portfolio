@@ -15,10 +15,6 @@ const menuList = [
     name: 'projects',
     text: 'Projects',
   },
-  {
-    name: 'contact',
-    text: 'Contact',
-  },
 ];
 
 function Headers() {
@@ -74,6 +70,7 @@ const Logo = styled.div`
 const Menus = styled.ul`
   display: flex;
   justify-content: center;
+  font-size: 1.5rem;
   list-style: none;
   cursor: pointer;
 `;
