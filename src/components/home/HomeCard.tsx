@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { fadeIn, fadeOut, floating2 } from '../../styles/animation';
+import { fadeIn, fadeOut } from '../../styles/animation';
 import theme from '../../styles/theme';
 
 type Props = {
