@@ -14,10 +14,5 @@ const Wrapper = styled.div`
   ${theme.common.flexCenter}
   width: 100%;
   min-height: 100vh;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 1000rem;
-  }
 `;
 export default Home;
