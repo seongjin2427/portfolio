@@ -14,5 +14,6 @@ const Wrapper = styled.div`
   ${theme.common.flexCenter}
   width: 100%;
   min-height: 100vh;
+  overflow: hidden;
 `;
 export default Home;
