@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { fadeIn, fadeOut, twinkle } from '../../styles/animation';
+import { fadeIn, fadeOut, floating2, twinkle } from '../../styles/animation';
 import theme from '../../styles/theme';
 
 type Props = {
@@ -51,6 +51,8 @@ const MainGlassCard = styled.div`
   -webkit-backdrop-filter: blur(3px);
   border-radius: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
+
+  animation: ${floating2} 5s ease-in-out infinite;
 
   @media (max-width: 768px) {
     width: 20rem;
