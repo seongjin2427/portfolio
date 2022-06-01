@@ -45,9 +45,11 @@ const Card = styled.div<CardProps>`
   ${theme.common.flexCenter}
 
   // 카드 가로세로 크기
-  ${({ size }) => css`
+  ${({ size, duration }) => css`
     width: ${size}rem;
     height: ${size}rem;
+
+    animation: ${floating2} ${duration}s ease-in-out infinite;
   `}
 
   position: relative;
@@ -56,10 +58,6 @@ const Card = styled.div<CardProps>`
   transition: all 0.2s;
   cursor: pointer;
   position: relative;
-
-  &:hover {
-    transform: translateY(-10px);
-  }
 
   span:first-child {
     font-size: 30px;
@@ -87,6 +85,7 @@ const Card = styled.div<CardProps>`
 
   img {
     object-fit: contain;
+    transition: all 0.2s;
     ${(props): any =>
       props.fliped
         ? css`
@@ -98,6 +97,10 @@ const Card = styled.div<CardProps>`
             animation-delay: 0.5s;
             transform: rotateY(-90deg) translateY(-10px);
           `}
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
   }
 
   p {
@@ -126,8 +129,6 @@ const Card = styled.div<CardProps>`
     ${({ size, duration }) => css`
       width: ${size / 1.5}rem;
       height: ${size / 1.5}rem;
-
-      animation: ${floating2} ${duration}s infinite;
     `}
 
     span:first-child {
